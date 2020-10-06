@@ -33,7 +33,7 @@ final class KoyomiCell: UICollectionViewCell {
             adjustSubViewsFrame()
         }
     }
-    var textColor: UIColor = UIColor.KoyomiColor.black {
+    var textColor: UIColor = UIColor.black {
         didSet {
             contentLabel.textColor = textColor
         }
