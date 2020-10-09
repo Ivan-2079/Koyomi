@@ -40,7 +40,11 @@ final class DateModel: NSObject {
     enum SelectionMode { case single, multiple, sequence, none }
     var selectionMode: SelectionMode = .single
     
-    struct SequenceDates { var start, end: Date? }
+    struct SequenceDates { var start, end: Date?
+        var isFinished: Bool {
+            return start != nil && end != nil
+        }
+    }
     lazy var sequenceDates: SequenceDates = .init(start: nil, end: nil)
     
     // Fileprivate properties

@@ -137,6 +137,8 @@ final public class Koyomi: UICollectionView {
     }
     public var lineView: LineView = .init()
     
+    public var singleSelectedCornerRadius: CGFloat = 10
+    
     @IBInspectable public var isHiddenOtherMonth: Bool = false
     
     // Layout properties
@@ -469,7 +471,7 @@ private extension Koyomi {
             cell.setContentFont(fontName: font.fontName, size: font.pointSize)
         }
         
-        cell.configureAppearanse(of: style, withColor: selectionColor, backgroundColor: backgroundColor, isSelected: isSelected)
+        cell.configureAppearance(of: style, withColor: selectionColor, backgroundColor: backgroundColor, isSelected: isSelected, isSingle: !model.sequenceDates.isFinished, singleSelectedCornerRadius: singleSelectedCornerRadius)
     }
 }
 

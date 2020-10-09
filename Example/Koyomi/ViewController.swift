@@ -20,9 +20,9 @@ class ViewController: UIViewController {
             koyomi.dayPosition = .center
             koyomi.selectionMode = .sequence(style: .semicircleEdge)
             koyomi.selectedStyleColor = UIColor(red: 203/255, green: 119/255, blue: 223/255, alpha: 1)
-            koyomi
-                .setDayFont(size: 14)
-                .setWeekFont(size: 10)
+            koyomi.setDayFont(size: 14)
+            koyomi.setWeekFont(size: 10)
+            koyomi.singleSelectedCornerRadius = 0
         }
     }
     @IBOutlet fileprivate weak var currentDateLabel: UILabel!

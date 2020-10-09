@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Koyomi'
-  s.version          = '1.2.8'
+  s.version          = '1.2.9'
   s.summary          = 'Simple customizable calendar component in Swift'
   s.description      = <<-DESC
 
@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
                         * Selectable calender
                         * Customizable in any properties for appearance.
                         * Support @IBDesignable and @IBInspectable
-                        * Support Swift 2.3
                         * Support Swift 5.0
                         * Compatible with Carthage
 

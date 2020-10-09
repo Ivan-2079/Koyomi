@@ -80,7 +80,8 @@ final class KoyomiCell: UICollectionViewCell {
         adjustSubViewsFrame()
     }
     
-    func configureAppearanse(of style: CellStyle, withColor color: UIColor, backgroundColor: UIColor, isSelected: Bool) {
+    func configureAppearance(of style: CellStyle, withColor color: UIColor, backgroundColor: UIColor, isSelected: Bool, isSingle: Bool, singleSelectedCornerRadius: CGFloat) {
+        self.layer.cornerRadius = 0
         switch style {
         case .standard:
             self.backgroundColor = isSelected ? color : backgroundColor
@@ -122,7 +123,10 @@ final class KoyomiCell: UICollectionViewCell {
                 rightSemicircleView.isHidden = true
                 leftSemicircleView.isHidden  = true
                 self.backgroundColor = color
-                
+             
+                if isSingle {
+                    self.layer.cornerRadius = singleSelectedCornerRadius
+                }
                 leftSemicircleView.frame.size.width = bounds.width / 2
                 
             } else if case .right = position {
@@ -199,7 +203,7 @@ private extension KoyomiCell {
         leftSemicircleView.isHidden = true
         addSubview(leftSemicircleView)
         
-        rightSemicircleView.frame = CGRect(x: bounds.width / 2, y: 0, width: bounds.width / 2, height: bounds.height)
+        rightSemicircleView.frame = CGRect(x: bounds.midX, y: 0, width: bounds.width / 2, height: bounds.height)
         rightSemicircleView.isHidden = true
         addSubview(rightSemicircleView)
         
@@ -215,7 +219,7 @@ private extension KoyomiCell {
         contentLabel.sizeToFit()
         contentLabel.frame.origin = postion
         
-        rightSemicircleView.frame = CGRect(x: bounds.width / 2, y: 0, width: bounds.width / 2, height: bounds.height)
+        rightSemicircleView.frame = CGRect(x: bounds.midX - 0.5, y: 0, width: bounds.width, height: bounds.height)
         leftSemicircleView.frame  = CGRect(x: 0, y: 0, width: bounds.width / 2, height: bounds.height)
     }
     
